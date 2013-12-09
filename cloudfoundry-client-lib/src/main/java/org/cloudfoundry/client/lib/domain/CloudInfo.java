@@ -38,7 +38,7 @@ public class CloudInfo {
 	private Usage usage;
 	private String name;
 	private String support;
-	private Integer build;
+	private String build;
 	private String version;
 	private String user;
 	private String description;
@@ -49,7 +49,7 @@ public class CloudInfo {
 	public CloudInfo(Map<String, Object> infoMap) {
 		name = CloudUtil.parse(String.class, infoMap.get("name"));
 		support = CloudUtil.parse(String.class, infoMap.get("support"));
-		build = CloudUtil.parse(Integer.class, infoMap.get("build"));
+		build = CloudUtil.parse(String.class, infoMap.get("build"));
 		version = CloudUtil.parse(String.class, infoMap.get("version"));
 		if (version == null) {
 			Number iVersion = CloudUtil.parse(Number.class, infoMap.get("version"));
@@ -83,7 +83,7 @@ public class CloudInfo {
 		}
 	}
 
-	public CloudInfo(String name, String support, String authorizationEndpoint, int build, String version,
+	public CloudInfo(String name, String support, String authorizationEndpoint, String build, String version,
 			String user, String description, Limits limits, Usage usage, boolean allowDebug) {
 		this.name = name;
 		this.support = support;
@@ -117,7 +117,7 @@ public class CloudInfo {
 		return authorizationEndpoint;
 	}
 
-	public Integer getBuild() {
+	public String getBuild() {
 		return build;
 	}
 

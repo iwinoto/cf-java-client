@@ -585,7 +585,7 @@ public class CloudControllerClientImpl implements CloudControllerClient {
 		String name = CloudUtil.parse(String.class, infoV2Map.get("name"));
 		String support = CloudUtil.parse(String.class, infoV2Map.get("support"));
 		String authorizationEndpoint = CloudUtil.parse(String.class, infoV2Map.get("authorization_endpoint"));
-		int build = CloudUtil.parse(Integer.class, infoV2Map.get("build"));
+		String build = CloudUtil.parse(String.class, infoV2Map.get("build"));
 		String version = "" + CloudUtil.parse(Number.class, infoV2Map.get("version"));
 		String description = CloudUtil.parse(String.class, infoV2Map.get("description"));
 
