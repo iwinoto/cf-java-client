@@ -335,7 +335,7 @@
 						<include>**/*Test.java</include>
 					</includes>
 					<excludes>
-						<exclude>**/CloudFoundryClientTest.java</exclude>
+<!-- 						<exclude>**/CloudFoundryClientTest.java</exclude> -->
 						<exclude>**/Abstract*.java</exclude>
 					</excludes>
 				</configuration>
