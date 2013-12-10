@@ -4,6 +4,8 @@ script: cd cloudfoundry-client-lib && mvn -P integration-test clean install -Dcc
   -Dccng.email=$EMAIL -Dccng.passwd=$PASSWD -Dccng.org=$ORG -Dccng.space=$SPACE -Dsurefire.useFile=false
 env:
   global:
+  - SPACE=dev
+  - DOMAIN=ng.bluemix.net
   - secure: "qdjdyxKtVt2vF7hQyQeCWt+cq0ygCPqHWZfrMSrNx+6aKXRZx4vFSWcQfYABaCiWP3Q4L/m69gl9OwB4tsI6OLIL6CDVyZa/F6lq468TZg/eyucz9MKIw6ohnoz3J7Fu25sSH5Rpt3EMmqpDH9YOarbaaALnEqVHI7f8lSnATwQ="
   
   - secure: "WHAc+Bf1pSnOjTGV1O6mJXmqBBzByMe1k51j5gX9T4OSuq4TtjKFp5ZBMhBaU9lnsXtkTLPVpKLXT7IrQS8XxX5i/9ybFw7InK8GuiYJ++BOMq+V6d2J/RahOTmECV8MR3NmRwn7V4Qg2XWr7TIHDOG65zeu4oJ8oFbU332B3Mo="
@@ -12,5 +14,4 @@ env:
   
   - secure: "ktdt/zt6UJ1c3xB+LSsv6eVe9B2PcKGByS1b/tVKRx/b56zcWXbjAGwQPRB0YK5AWXCSDFc5yiYl3IBm3ExJ8dnLf7TeB8gj427WxKGAM9qsSNe8CbHPRatnl5+PFVPyg29dgCMEq5Gv0ZQojiJgRRqNUdWlxSMwZm4dLEawIl4="
   
-  - secure: "ps7D8u2saJgZseeB7JLAv8AMaz3md9DOAHE50l8IU47xhoVsNMWUmKhTpcl2N0Q8XoMbSRiDWBnWfAxehpHlWsRmkaff+CtKG0aEWd44JhWBRHjmBZlduRXB4CSpEHmD5T/brpq4XCsZJzkwsCjPScaA9zd6cPVFudITwlcUves="
   
