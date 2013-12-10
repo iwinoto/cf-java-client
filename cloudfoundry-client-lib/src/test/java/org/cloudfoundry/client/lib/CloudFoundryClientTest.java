@@ -4,11 +4,13 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 
@@ -65,10 +67,12 @@ import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
+import org.mockito.internal.matchers.InstanceOf;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.*;
+import org.springframework.test.AssertThrows;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
@@ -206,7 +210,7 @@ public class CloudFoundryClientTest {
 		if (connectedClient != null) { //may happen if setUp() fails
 			connectedClient.deleteAllApplications();
 			connectedClient.deleteAllServices();
-			clearTestDomainAndRoutes();
+//			clearTestDomainAndRoutes();
 		}
 		tearDownComplete = true;
 	}
@@ -217,7 +221,7 @@ public class CloudFoundryClientTest {
 		CloudInfo info = connectedClient.getCloudInfo();
 		assertNotNull(info.getName());
 		assertNotNull(info.getSupport());
-		assertNotNull(info.getBuild());
+		assertThat(info.getBuild(), instanceOf(String.class));
 	}
 
 	/**
