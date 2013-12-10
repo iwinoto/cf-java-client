@@ -4,13 +4,13 @@ script: cd cloudfoundry-client-lib && mvn -P integration-test clean install -Dcc
   -Dccng.email=$EMAIL -Dccng.passwd=$PASSWD -Dccng.org=$ORG -Dccng.space=$SPACE -Dsurefire.useFile=false
 env:
   global:
-  - secure: "Lw8COescmlaamWXs8JJ6DXbendp5wwfR51tF57AqzcwkHnS0e2MudVrWuNKRM77kok6WDV3D6cItLosqJq6xaipfF1xwCGaEoPJERdEZwO+9TSOl9e3XSyNg0EQ6cN23ZsaP+eWPotsOVIfvv9MZrJkDj8T4DNq6UgandUEIZoM="
+  - secure: "qdjdyxKtVt2vF7hQyQeCWt+cq0ygCPqHWZfrMSrNx+6aKXRZx4vFSWcQfYABaCiWP3Q4L/m69gl9OwB4tsI6OLIL6CDVyZa/F6lq468TZg/eyucz9MKIw6ohnoz3J7Fu25sSH5Rpt3EMmqpDH9YOarbaaALnEqVHI7f8lSnATwQ="
   
-  - secure: "YrIjleV2aonzZ7KIIBAsDLqrgqkjVh7Y36U6NyPGS3TW7+Y7ygBzhGI15oohAzNVMvDvgK+qN5QLlyYNfwddQtqtMvtx4Jhfd5JiA106gobEU5H4J/HMxIC8zAVwO4Qh2jVUIichE9A+BbuKcl4vk+2nd7+EwkU9e5WFVM6UVU8="
-  - secure: ! 'QDCvbb1T+DwyoLhoK1omwhRXBaHz/iYMCcI/miKlExwjCqHsPmnoy4HGe0vq
-
-      Ej+Nm6WraYPkDC7GGmt3i7tNOgMFssxTm0qh62zzIlf1oQC/FQuPK4rQL+D/
-
-      BOZJB7rFBcko9ONKNTubUfomk3NLuf65/S+GbsSWshXohon4JWU='
-  - secure: "HVUwtM/yfydxbv8alJ4c1FQ9itB5PlbFAQhrQAsXLnA20/dpxuy4oqXOh+udWYunUQKCdDvI2B22rKvU0Tk91VIpxhVed0mes2jWeHIMIMX/tGj5U3I52wuaCP4prELiMSWOVoT0rBK8F6zjT9KA4g1pyKpm6WJ//glEuahzcAY="
-  - secure: "pZJs7nREXrP1pfKZ/IOWHjK59kCOhw4C+bS6q3j2yklqtv0p8Qg0gOhBROktvJGLNgBTCQYnnoRTV3x07416B3cGnORag9zYsxvSPzPBgvHdIXIpd6H2qarS+WTVW6RXWaXimIgpc9Yr3SBsYuqgTprRHWYinWIifDVzx8yDrrA="
+  - secure: "WHAc+Bf1pSnOjTGV1O6mJXmqBBzByMe1k51j5gX9T4OSuq4TtjKFp5ZBMhBaU9lnsXtkTLPVpKLXT7IrQS8XxX5i/9ybFw7InK8GuiYJ++BOMq+V6d2J/RahOTmECV8MR3NmRwn7V4Qg2XWr7TIHDOG65zeu4oJ8oFbU332B3Mo="
+  
+  - secure: "mNSf3J3XHii3iW7gZGVzYrG5W2B6UIEzUVPcutJl6ElbshMoLsT6RHl5cBrYxQqxzZhd77ReFTqUkU0xqgyJ33wYh5cjpk6KJ6hl+d/zCm5293rMCHz25eYN+hUqp1gYLT8JCDttmrAXxrSS/VZvL/X7RIiZJMuyX53PddagvNc="
+  
+  - secure: "ktdt/zt6UJ1c3xB+LSsv6eVe9B2PcKGByS1b/tVKRx/b56zcWXbjAGwQPRB0YK5AWXCSDFc5yiYl3IBm3ExJ8dnLf7TeB8gj427WxKGAM9qsSNe8CbHPRatnl5+PFVPyg29dgCMEq5Gv0ZQojiJgRRqNUdWlxSMwZm4dLEawIl4="
+  
+  - secure: "ps7D8u2saJgZseeB7JLAv8AMaz3md9DOAHE50l8IU47xhoVsNMWUmKhTpcl2N0Q8XoMbSRiDWBnWfAxehpHlWsRmkaff+CtKG0aEWd44JhWBRHjmBZlduRXB4CSpEHmD5T/brpq4XCsZJzkwsCjPScaA9zd6cPVFudITwlcUves="
+  
