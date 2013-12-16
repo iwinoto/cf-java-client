@@ -210,7 +210,7 @@ public class CloudFoundryClientTest {
 		if (connectedClient != null) { //may happen if setUp() fails
 			connectedClient.deleteAllApplications();
 			connectedClient.deleteAllServices();
-//			clearTestDomainAndRoutes();
+			clearTestDomainAndRoutes();
 		}
 		tearDownComplete = true;
 	}
@@ -1575,7 +1575,7 @@ public class CloudFoundryClientTest {
 			for (CloudRoute route : routes) {
 				connectedClient.deleteRoute(route.getHost(), route.getDomain().getName());
 			}
-			if (!domain.getName().equals(defaultDomainName)) {
+			if (!domain.getName().equals(defaultDomainName) && domain.getOwner().getName().equals(CCNG_USER_ORG)) {
 				connectedClient.deleteDomain(domain.getName());
 			}
 		}
