@@ -67,12 +67,10 @@ import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
-import org.mockito.internal.matchers.InstanceOf;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.*;
-import org.springframework.test.AssertThrows;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
@@ -123,7 +121,7 @@ public class CloudFoundryClientTest {
 	private static int inJvmProxyPort;
 	private static AtomicInteger nbInJvmProxyRcvReqs;
 
-	private static final String MYSQL_SERVICE_LABEL = "cleardb";
+	private static final String MYSQL_SERVICE_LABEL = System.getProperty("ccng.serviceOffering", "cleardb");
 
 	private static final int DEFAULT_MEMORY = 512; // MB
 
