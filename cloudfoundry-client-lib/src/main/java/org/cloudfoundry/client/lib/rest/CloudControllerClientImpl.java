@@ -167,24 +167,16 @@ public class CloudControllerClientImpl implements CloudControllerClient {
 		if (tempClient.token == null) {
 			tempClient.login();
 		}
+
 		initialize(cloudControllerUrl, restUtil, cloudCredentials, authorizationEndpoint, null, httpProxyConfiguration);
-		List<CloudSpace> spaces = tempClient.getSpaces();
-		for (CloudSpace space : spaces) {
-			if (space.getName().equals(spaceName)) {
-				CloudOrganization org = space.getOrganization();
-				if (orgName == null || org.getName().equals(orgName)) {
-					sessionSpace = space;
-				}
-			}
-		}
-		if (sessionSpace == null) {
-			throw new IllegalArgumentException("No matching organization and space found for org: " + orgName + " space:" + spaceName);
-		}
+
+		sessionSpace = validateSpaceAndOrg(spaceName, orgName, tempClient);
+
 		token = tempClient.token;
 	}
 
 	private void initialize(URL cloudControllerUrl,  RestUtil restUtil, CloudCredentials cloudCredentials,
-			   			    URL authorizationEndpoint, CloudSpace sessionSpace, HttpProxyConfiguration httpProxyConfiguration) {
+							URL authorizationEndpoint, CloudSpace sessionSpace, HttpProxyConfiguration httpProxyConfiguration) {
 		Assert.notNull(cloudControllerUrl, "CloudControllerUrl cannot be null");
 		Assert.notNull(restUtil, "RestUtil cannot be null");
 		this.restUtil = restUtil;
@@ -206,6 +198,21 @@ public class CloudControllerClientImpl implements CloudControllerClient {
 
 		this.oauthClient = restUtil.createOauthClient(authorizationEndpoint, httpProxyConfiguration);
 		this.sessionSpace = sessionSpace;
+	}
+
+	private CloudSpace validateSpaceAndOrg(String spaceName, String orgName, CloudControllerClientImpl client) {
+		List<CloudSpace> spaces = client.getSpaces();
+
+		for (CloudSpace space : spaces) {
+			if (space.getName().equals(spaceName)) {
+				CloudOrganization org = space.getOrganization();
+				if (orgName == null || org.getName().equals(orgName)) {
+					return space;
+				}
+			}
+		}
+
+		throw new IllegalArgumentException("No matching organization and space found for org: " + orgName + " space: " + spaceName);
 	}
 
 	public void setResponseErrorHandler(ResponseErrorHandler errorHandler) {

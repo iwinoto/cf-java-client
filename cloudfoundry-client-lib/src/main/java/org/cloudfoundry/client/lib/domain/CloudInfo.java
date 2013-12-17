@@ -18,12 +18,6 @@ package org.cloudfoundry.client.lib.domain;
 
 import org.cloudfoundry.client.lib.util.CloudUtil;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -180,12 +174,12 @@ public class CloudInfo {
 		private int services;
 
 		public Usage(Map<String, Object> data) {
-            if(data != null && !data.isEmpty()) {
-                apps = CloudUtil.parse(Integer.class, data.get("apps"));
-                totalMemory = CloudUtil.parse(Integer.class,  data.get("memory"));
-                urisPerApp = CloudUtil.parse(Integer.class,  data.get("app_uris"));
-                services = CloudUtil.parse(Integer.class,  data.get("services"));
-            }
+			if (data != null && !data.isEmpty()) {
+				apps = CloudUtil.parse(Integer.class, data.get("apps"));
+				totalMemory = CloudUtil.parse(Integer.class, data.get("memory"));
+				urisPerApp = CloudUtil.parse(Integer.class, data.get("app_uris"));
+				services = CloudUtil.parse(Integer.class, data.get("services"));
+			}
 		}
 
 		Usage() {
