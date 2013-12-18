@@ -1,9 +1,10 @@
 ---
 language: java
 script: cd cloudfoundry-client-lib && mvn -P integration-test clean install -Dccng.target=$TARGET
-  -Dccng.email=$EMAIL -Dccng.passwd=$PASSWD -Dccng.org=$ORG -Dccng.space=$SPACE -Dsurefire.useFile=false
+  -Dccng.email=$EMAIL -Dccng.passwd=$PASSWD -Dccng.org=$ORG -Dccng.space=$SPACE -Dccng.serviceOffering=$SERVICE_OFFERING -Dsurefire.useFile=false
 env:
   global:
+  - SERVICE_OFFERING=mysql
   - SPACE=dev
   - DOMAIN=ng.bluemix.net
   - TARGET=http://api.ng.bluemix.net
