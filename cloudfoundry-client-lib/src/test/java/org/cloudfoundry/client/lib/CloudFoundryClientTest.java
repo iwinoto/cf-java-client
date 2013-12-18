@@ -809,12 +809,12 @@ public class CloudFoundryClientTest {
 			stats = connectedClient.getApplicationStats(appName);
 		}
 
-		InstanceStats firstInstance = stats.getRecords().get(0);
-		assertEquals("0", firstInstance.getId());
-		for (int retries = 0; retries < 50 && firstInstance.getUsage() == null; retries++) {
+		InstanceStats lastInstance = stats.getRecords().get(instanceCount-1);
+		assertEquals(Integer.toString(instanceCount-1), lastInstance.getId());
+		for (int retries = 0; retries < 50 && lastInstance.getUsage() == null; retries++) {
 			Thread.sleep(1000);
 			stats = connectedClient.getApplicationStats(appName);
-			firstInstance = stats.getRecords().get(0);
+			lastInstance = stats.getRecords().get(instanceCount-1);
 		}
 	}
 
