@@ -6,7 +6,7 @@ env:
   global:
   - SPACE=dev
   - DOMAIN=ng.bluemix.net
-  - secure: "qdjdyxKtVt2vF7hQyQeCWt+cq0ygCPqHWZfrMSrNx+6aKXRZx4vFSWcQfYABaCiWP3Q4L/m69gl9OwB4tsI6OLIL6CDVyZa/F6lq468TZg/eyucz9MKIw6ohnoz3J7Fu25sSH5Rpt3EMmqpDH9YOarbaaALnEqVHI7f8lSnATwQ="
+  - TARGET=http://api.ng.bluemix.net
   
   - secure: "WHAc+Bf1pSnOjTGV1O6mJXmqBBzByMe1k51j5gX9T4OSuq4TtjKFp5ZBMhBaU9lnsXtkTLPVpKLXT7IrQS8XxX5i/9ybFw7InK8GuiYJ++BOMq+V6d2J/RahOTmECV8MR3NmRwn7V4Qg2XWr7TIHDOG65zeu4oJ8oFbU332B3Mo="
   
